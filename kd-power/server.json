@@ -1,0 +1,14 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-09-29/server.schema.json",
+  "name": "in.kdpower/kd-power",
+  "title": "KD Power",
+  "description": "Search KD Power mobile spare parts by phone model; shopkeepers and distributors can order, track orders and check transactions.",
+  "version": "0.2.0",
+  "websiteUrl": "https://kdpower.in",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://kdpower.in/mcp"
+    }
+  ]
+}

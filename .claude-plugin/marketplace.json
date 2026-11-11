@@ -1,0 +1,17 @@
+{
+  "name": "kdpower",
+  "owner": {
+    "name": "KD Power",
+    "url": "https://kdpower.in"
+  },
+  "metadata": {
+    "description": "KD Power AI plugins for Claude Code."
+  },
+  "plugins": [
+    {
+      "name": "kd-power",
+      "source": "./kd-power",
+      "description": "Search KD Power mobile spare parts without login; shopkeepers and distributors can order, track orders and check transactions."
+    }
+  ]
+}

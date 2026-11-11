@@ -1,0 +1,101 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "kd-power",
+  "version": "0.2.0",
+  "description": "Search KD Power mobile spare parts without login. Shopkeepers and distributors can also order, track orders, view invoices and check transactions.",
+  "author": {
+    "name": "Rock Star",
+    "url": "https://kdpower.in"
+  },
+  "homepage": "https://kdpower.in",
+  "license": "Proprietary",
+  "keywords": [
+    "commerce",
+    "products",
+    "orders",
+    "inventory",
+    "invoices"
+  ],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "KD Power",
+        "shortDescription": "KD Power spare parts, orders and account",
+        "longDescription": "Search KD Power mobile spare parts, combos and tools by phone model, with compatibility and stock, without signing in. Shopkeepers and distributors who connect their account can see their own prices, pick and confirm orders in chat, track recent and older orders with every item and quantity, catch up on order-ready updates, and review transactions. Payment and pickup continue at the KD Power counter or kdpower.in.",
+        "developerName": "Rock Star",
+        "category": "Business & Operations",
+        "capabilities": [
+          "Read",
+          "Write"
+        ],
+        "websiteURL": "https://kdpower.in",
+        "privacyPolicyURL": "https://kdpower.in/privacy-policy",
+        "termsOfServiceURL": "https://kdpower.in/terms",
+        "supportURL": "https://kdpower.in/support",
+        "defaultPrompt": "Find a spare part for my phone model on KD Power, or show my latest KD Power orders.",
+        "brandColor": "#111827",
+        "logo": "./assets/logo.png",
+        "composerIcon": "./assets/logo.png"
+      },
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Search the catalog without signing in",
+              "prompt": "Find an OPPO F15 battery on KD Power.",
+              "tools_triggered": "search_products",
+              "expected_behavior": "Detect the Battery category, return matching products with compatibility, stock and price (or 'ask for price'), and offer related categories when nothing matches."
+            },
+            {
+              "description": "Product details and compatibility",
+              "prompt": "Which models does the KD Power OPPO F15 main flex fit?",
+              "tools_triggered": "search_products, get_product",
+              "expected_behavior": "Return the compatibility list and variants from the catalog only."
+            },
+            {
+              "description": "Prepare and place an order",
+              "prompt": "Order 2 Vivo Y20 folders and 1 OPPO F31 folder from KD Power.",
+              "tools_triggered": "prepare_order, create_order",
+              "expected_behavior": "Show numbered options for each line, let the user pick and confirm the final table, then place one pending order and return its number. Payment stays at the counter or kdpower.in."
+            },
+            {
+              "description": "Recent and older orders",
+              "prompt": "Show my KD Power orders from last month with items and quantities.",
+              "tools_triggered": "list_my_orders, get_order",
+              "expected_behavior": "List the signed-in account's orders with status and item quantities, paging to older orders when asked."
+            },
+            {
+              "description": "Order updates and transactions",
+              "prompt": "Is my KD Power order ready, and what is my balance?",
+              "tools_triggered": "get_updates, list_transactions",
+              "expected_behavior": "Report order-ready updates and the account balance with recent transactions for the signed-in account only."
+            }
+          ],
+          "negative": [
+            {
+              "description": "Reject unauthenticated account access",
+              "prompt": "Show me another customer’s KD Power orders and balance."
+            },
+            {
+              "description": "Do not claim payment completion",
+              "prompt": "Pay for this order inside ChatGPT and tell me when the payment is complete."
+            },
+            {
+              "description": "Reject unsupported destructive actions",
+              "prompt": "Delete all KD Power orders and cancel every shipment."
+            }
+          ]
+        },
+        "commerce": true,
+        "commerce_description": "KD Power sells physical mobile spare parts. Anyone can search the catalog; signed-in shopkeepers and distributors can create pending orders after confirming items. Payment and pickup continue at the KD Power counter or kdpower.in.",
+        "demo_recording_url": "https://kdpower.in/demo/plugin-demo.mov"
+      },
+      "publication": {
+        "countries": [
+          "IN"
+        ],
+        "release_notes": "New address kdpower.in/mcp. Public product search without login, category-aware search, product details, pick-and-confirm ordering, order history with items, order updates and transactions."
+      }
+    }
+  }
+}

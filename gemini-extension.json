@@ -1,0 +1,11 @@
+{
+  "name": "kdpower",
+  "version": "0.2.0",
+  "description": "KD Power: search mobile spare parts by phone model; shopkeepers and distributors can order, track orders and check transactions.",
+  "mcpServers": {
+    "kd-power": {
+      "httpUrl": "https://kdpower.in/mcp"
+    }
+  },
+  "contextFileName": "GEMINI.md"
+}
