@@ -4,7 +4,7 @@ Public repo (github.com/hirockstar/plugins) holding the AI plugin listings for K
 
 ## How it fits together
 
-- The MCP server runs inside the private kdpower app (`kdpower/apps/web/app/mcp/`) at **https://kdpower.in/mcp**. Tools, login (Supabase OAuth), the consent page (`/oauth`) and the "AI apps" profile tab all live there; internal docs are in `kdpower/apps/web/docs/mcp.md`.
+- The MCP server runs inside the private kdpower app (`kdpower/apps/web/app/mcp/`) at **https://kdpower.in/mcp**. `https://mcp.kdpower.in/mcp` is the same server; `kd-power/mcp.json` (Codex/ChatGPT format) must keep that original address because OpenAI does not allow an existing app to change its MCP URL. Every other manifest uses `https://kdpower.in/mcp`. Tools, login (Supabase OAuth), the consent page (`/oauth`) and the "AI apps" profile tab all live there; internal docs are in `kdpower/apps/web/docs/mcp.md`.
 - This repo only describes the plugin to each AI platform. Tool changes on the server do not need a plugin update (apps read `tools/list`); update listings only when the URL, login behaviour, descriptions or test cases change.
 - Results are returned as ready-to-show Markdown tables/lists; no custom in-chat UI is sent (may come later via MCP Apps).
 - Without login: search_products, get_product, list_categories, list_brands, store_info. Shopkeeper/distributor login: my_account, list_my_orders, get_order, prepare_order, create_order, buy_again, list_transactions, get_updates. Other roles cannot connect.

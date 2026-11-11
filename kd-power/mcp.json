@@ -3,7 +3,7 @@
   "mcpServers": {
     "kd-power": {
       "type": "streamable-http",
-      "url": "https://kdpower.in/mcp"
+      "url": "https://mcp.kdpower.in/mcp"
     }
   }
 }
