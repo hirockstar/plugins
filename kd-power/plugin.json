@@ -20,7 +20,7 @@
     "com.openai": {
       "interface": {
         "displayName": "KD Power",
-        "shortDescription": "KD Power spare parts, orders and account",
+        "shortDescription": "Spare parts, orders & account",
         "longDescription": "Search KD Power mobile spare parts, combos and tools by phone model, with compatibility and stock, without signing in. Shopkeepers and distributors who connect their account can see their own prices, pick and confirm orders in chat, track recent and older orders with every item and quantity, catch up on order-ready updates, and review transactions. Payment and pickup continue at the KD Power counter or kdpower.in.",
         "developerName": "Rock Star",
         "category": "Business & Operations",
